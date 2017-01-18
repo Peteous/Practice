@@ -10,5 +10,5 @@
 2. Dice Roller.py
  - This is a program that takes you inout of dice to roll, in d20 style formatting, and turns that into a simulated dice roll value. This takes place in the console. Code is written in Python. This is my second ever Python project, and my first public Python commit.
 
-3. Java Course Certification.pdf
+3. Intro to Java Certificate.pdf
  - This file is generated upon the completion of the "Learn Java" app for iOS course on the syntax of Java. It is not my only Java training, but it is technically my most recent. The Java course from this company is not as extensive as the Python course from the same company.
