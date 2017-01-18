@@ -1,7 +1,7 @@
 # Practice
 
 ## Description
- - This repository contains practice code written by me during my days programming. I make no guarantees about current working operation, since I'm digging a lot of this old code up. The older stuff is generally also not written well (bad variable/object names) because I was young. Now I don't wish to fix it.
+ - This repository contains practice code written by me, some for practical purposes, amd some for fun. I make no guarantees about current working operation, since I'm digging a lot of this old code up. The older stuff is generally also not written well (bad variable/object names) because I was young. Now I don't wish to fix it.
 
 ## Table of Contents
 1. NotGalaga.java
