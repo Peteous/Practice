@@ -83,7 +83,6 @@ def main():
 		
 		#Get the instapaper URL for adding url as bookmark
 		u = getInstapaperURL(url)
-		print(u)
 		
 		#Add u to Instapaper 
 		addToInstapaper(u)
