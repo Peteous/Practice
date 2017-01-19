@@ -28,11 +28,17 @@ def urlEncode(address):
 	address.replace(']','%5D')
 	return address
 
+#This method creates a URL that when excecuted will add the input url, "webAddress", to Instapaper as a bookmark
 def getInstapaperURL(webAddress):
 	webAddress = str(webAddress)
 	instapaper = 'https://www.instapaper.com/api/add'
+	
+	#The username and password should be altered by the user. They are set to example values for security reasons
 	username = 'username@example.com'
 	password = 'Example_Password_1'
+	
+	#This part of the method calls my urlEncode method to encode webAddress into instapaper, adding the proper requirements
+	# for the API to function using URL encoding syntax
 	user = urlEncode(username)
 	word = urlEncode(password)
 	url = urlEncode(webAddress)
@@ -42,6 +48,8 @@ def getInstapaperURL(webAddress):
 	instapaper += word
 	instapaper += '&url='
 	instapaper += url 
+	
+	#return the encoded string for later use
 	return instapaper
 	
 def addToInstapaper(URL):
