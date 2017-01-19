@@ -1,7 +1,10 @@
+#These libraries are available in Pythonista for iOS
 import appex
 import requests
 import clipboard
 
+#This method is defined because urllib has very poor support in Pythonista for iOS.
+#This method encodes the input string "address" with the character codes consistant with usability in a url
 def urlEncode(address):
 	address = str(address)
 	address.replace('%','%25')
