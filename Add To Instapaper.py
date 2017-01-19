@@ -51,8 +51,12 @@ def getInstapaperURL(webAddress):
 	
 	#return the encoded string for later use
 	return instapaper
-	
+
+#This method executes the URL that adds desired url to Instapaper through url encoded input URL
 def addToInstapaper(URL):
+	#KNOWN ISSUE - see issues section
+	# Pythonista for iOS doesn't support urllib well, so I resorted to setting the clipboard as the encoded url, which can
+	# be pasted into your browser for bookmark adding
 	clipboard.set(URL)
 	
 def main():
