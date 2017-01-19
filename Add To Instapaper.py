@@ -59,21 +59,40 @@ def addToInstapaper(URL):
 	# be pasted into your browser for bookmark adding
 	clipboard.set(URL)
 	
+#Main method
 def main():
+	#Check to see if the main method is being run from the share sheet
 	if not appex.is_running_extension():
+		#if this if statement is true, clarify that we're running in the app
 		print('Running in Pythonista app, using test data...\n')
+		
+		#get the clipboard for the url
 		url = str(clipboard.get())
+		
+		#check that the clipboard is a url. if not, set as None for error production
 		if not url.startswith('http'):
 			url = None
 	else:
+		#Get url from app extension if running from extension
 		url = appex.get_url()
+	
+	#Check if url has a value
 	if url:
+		#Give user feedback about what is happening
 		print('Input URL: %s' % (url,))
+		
+		#Get the instapaper URL for adding url as bookmark
 		u = getInstapaperURL(url)
 		print(u)
+		
+		#Add u to Instapaper 
 		addToInstapaper(u)
+		
+		#Tell  the user that the action is complete
 		print('\n\nComplete!')
 	else:
+		#Tell the user that there was an error
 		print('No input URL found.')
 
+#Execute main function
 main()
