@@ -19,4 +19,7 @@
 5. Undo iOS Slack Code Parser.py
  - This script was written purely for testing purposes. It is the inverse operation of "iOS Slack Code Parser.py", so that I could do debugging with one string, without having to go back to the source string. This script does not need to be kept around. The script searches for spaces in a string, removes them, and then outputs the string to the clipboard.
 
-6. 
+6. Add To Instapaper.py
+ - This script was written in Pythonista for iOS. It is, as such, hampered and enabled by the libraries in Pythonista. It is designed to run within the share sheet, but can also be used from the app as long as you have a URL copied. It uses Instapaper's simple API to upload a url of your choice to Instapaper as a bookmark.
+ - This script was written mostly for fun to see I could copy the functionality of a Workflow workflow that I had made. I am relatively happy with the results. 
+ - You will need to enter your own details for username and password, which I did not provide for security reasons.
