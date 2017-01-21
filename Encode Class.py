@@ -2,7 +2,7 @@ class Encode:
 	def __init__(self):
 		output = ''
 	class url(Encode):
-		def urlEncode(self,URL):
+		def encode(self,URL):
 			output = str(URL)
 			output.replace('%','%25')
 			output.replace('!','%21')
@@ -24,6 +24,6 @@ class Encode:
 			output.replace('[','%5B')
 			output.replace(']','%5D')
 			return output
-		def urlWrite(self,URL,encodedStr):
+		def write(self,URL,encodedStr):
 			output = URL + '?' + encodedStr
 			return output
