@@ -15,9 +15,6 @@ def urlEncode(self,url,apiURL=None,paramDict=None):
 			return output
 		else:
 	else: 
-def write(self,URL,encodedStr):
-	output = URL + '?' + encodedStr
-	return output
 def urlCharShift(self,text):
 	url = str(text)
 	url.replace('%','%25')
