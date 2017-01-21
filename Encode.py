@@ -1,36 +1,37 @@
-def urlEncode(url,apiURL=None,paramDict=None):
+def urlEncode(url,apiURL=None,paramNames=None,paramData=None):
 	output = ''
 	url = urlCharShift(url)
-	if not apiURL == None:
+	url = 'url='+url
+	if not paramNames == None and not paramData == None and not apiURL == None:
 		output += apiURL
-		if not paramDict == None:
-			dictKeys = urlCharShift(paramDict.keys())
-			length = len(dictKeys)
-			for index in range(length):	
-				dictVars[index] = urlCharShift(paramDict[dictKeys[index]])
-				output += '?'
-			for i in range(length):
-				if i < 1:
-					output += dictKeys[i] + '=' + dictVars[i]
-				else:
-					output += '&' + dictKeys[i] + '=' + dictVars[i]
-			return output
-		else:
-			output += urlCharShift(url)
-	elif not paramDict == None:
-		dictKeys = urlCharShift(paramDict.keys())
-		length = len(dictKeys)
-		for index in range(length):	
-			dictVars[index] = urlCharShift(paramDict[dictKeys[index]])
-			output += '?'
-		for i in range(length):
-			if i < 1:
-				output += dictKeys[i] + '=' + dictVars[i]
+		output += '?'
+		length = len(paramNames)
+		for index in range(length):
+			paramData[index] = urlCharShift(paramData[index])
+			if index < 1:
+				output += paramNames[index] + '=' + paramData[index]
 			else:
-				output += '&' + dictKeys[i] + '=' + dictVars[i]
+				output += '&' + paramNames[index] + '=' + paramData[index]
+		output += '&'
+		output += url
+		return output
+	elif paramNames == None and not apiURL == None:
+		output += apiURL
+		output += '?'
+		output += url
+		return output
+	elif apiURL == None:
+		length = len(paramNames)
+		for index in range(length):
+			paramData[index] = urlCharShift(paramData[index])
+			if index < 1:
+				output += paramNames[index] + '=' + paramData[index]
+			else:
+				output += '&' + paramNames[index] + '=' + paramData[index]
+		output += url
 		return output
 	else:
-		output = url
+		print('\n\nAn error occured. Please check your input parameters.')
 		return output
 
 #internal method
