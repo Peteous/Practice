@@ -27,6 +27,18 @@ class Encode:
 			output.replace('[','%5B')
 			output.replace(']','%5D')
 			return output
+		def params(self,paramDict):
+			dictKeys = paramDict.keys()
+			length = len(dictKeys)
+			for index in range(length):
+				dictVars[index] = paramDict[dictKeys[index]]
+			output = '?'
+			for i in range(length):
+				if i < 1:
+					output += dictKeys[i] + '=' + dictVars[i]
+				else:
+					output += '&' + dictKeys[i] + '=' + dictVars[i]
+			return output
 		def write(self,URL,encodedStr):
 			output = URL + '?' + encodedStr
 			return output
