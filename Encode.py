@@ -1,12 +1,14 @@
-def urlEncode(self,url,apiURL=None,paramDict=None):
+def urlEncode(url,apiURL=None,paramDict=None):
+	output = ''
 	url = urlCharShift(url)
 	if not apiURL == None:
+		output += apiURL
 		if not paramDict == None:
 			dictKeys = urlCharShift(paramDict.keys())
 			length = len(dictKeys)
 			for index in range(length):	
 				dictVars[index] = urlCharShift(paramDict[dictKeys[index]])
-				output = '?'
+				output += '?'
 			for i in range(length):
 				if i < 1:
 					output += dictKeys[i] + '=' + dictVars[i]
@@ -14,8 +16,25 @@ def urlEncode(self,url,apiURL=None,paramDict=None):
 					output += '&' + dictKeys[i] + '=' + dictVars[i]
 			return output
 		else:
-	else: 
-def urlCharShift(self,text):
+			output += urlCharShift(url)
+	elif not paramDict == None:
+		dictKeys = urlCharShift(paramDict.keys())
+		length = len(dictKeys)
+		for index in range(length):	
+			dictVars[index] = urlCharShift(paramDict[dictKeys[index]])
+			output += '?'
+		for i in range(length):
+			if i < 1:
+				output += dictKeys[i] + '=' + dictVars[i]
+			else:
+				output += '&' + dictKeys[i] + '=' + dictVars[i]
+		return output
+	else:
+		output = url
+		return output
+
+#internal method
+def urlCharShift(text):
 	url = str(text)
 	url.replace('%','%25')
 	url.replace('!','%21')
