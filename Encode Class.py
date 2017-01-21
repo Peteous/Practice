@@ -1,6 +1,9 @@
 class Encode:
 	def __init__(self):
 		output = ''
+	def encode(self,str):
+		output += str
+		return output
 	class url(Encode):
 		def encode(self,URL):
 			output = str(URL)
