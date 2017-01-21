@@ -1,4 +1,4 @@
-def encode(self,URL,paramDict=None):
+def urlEncode(self,URL,paramDict=None):
 	if not paramDict == None:
 		dictKeys = paramDict.keys()
 		length = len(dictKeys)
