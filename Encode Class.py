@@ -23,3 +23,6 @@ class Encode:
 		output.replace('[','%5B')
 		output.replace(']','%5D')
 		return output
+	def urlWrite(self,URL,encodedStr):
+		output = URL + '?' + encodedStr
+		return output
