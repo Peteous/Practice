@@ -23,3 +23,6 @@
  - This script was written in Pythonista for iOS. It is, as such, hampered and enabled by the libraries in Pythonista. It is designed to run within the share sheet, but can also be used from the app as long as you have a URL copied. It uses Instapaper's simple API to upload a url of your choice to Instapaper as a bookmark.
  - This script was written mostly for fun to see I could copy the functionality of a Workflow workflow that I had made. I am relatively happy with the results. 
  - You will need to enter your own details for username and password, which I did not provide for security reasons.
+
+7. Encode.py
+ - This file contains a method for encoding inputs into a url format. The method can take in just a string for encoding, a string and a string for an url for an API, and parameters for url encoding. This method could be used in a script like Add To Instapaper.py instead of writing all the steps out. Eventually, I will add other encoding methods to this file, for encoding systems like base64 encoding for example. This document also contains an internal method, which is not meant for use outside of this document. This method is urlCharShift, which contains the actual character changes in url encoding.
