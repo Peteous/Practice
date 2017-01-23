@@ -26,3 +26,6 @@
 
 7. Encode.py
  - This file contains a method for encoding inputs into a url format. The method can take in just a string for encoding, a string and a string for an url for an API, and parameters for url encoding. This method could be used in a script like Add To Instapaper.py instead of writing all the steps out. Eventually, I will add other encoding methods to this file, for encoding systems like base64 encoding for example. This document also contains an internal method, which is not meant for use outside of this document. This method is urlCharShift, which contains the actual character changes in url encoding.
+
+8. urlEncode.java
+ - This file is a java class which mimicks the functionality of Encode.py, but in Java. The code was written and compiled in the BlueJay IDE on the Raspberry Pi Zero. 
