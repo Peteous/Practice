@@ -3,10 +3,10 @@ import re
 def emailExtract(String):
 	pattern = r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)"
 	match = re.search(pattern, String)
-	try match:
+	if match:
 		email = match.group()
 		return email
-	except:
+	else:
 		print("No Email Found - Null string passed")
 		return ''
 		
