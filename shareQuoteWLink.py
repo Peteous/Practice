@@ -6,6 +6,7 @@ import clipboard
 import webbrowser
 
 #import Launcher.py
+	#This script is available in pythonista, but could not be imported for some reason
 '''
 This widget script shows a grid of shortcut buttons that launch URLs when tapped.
 
