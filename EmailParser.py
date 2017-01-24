@@ -9,3 +9,11 @@ def emailExtract(String):
 	except:
 		print("No Email Found - Null string passed")
 		return ''
+		
+def checkEmailFormat(String):
+	pattern = r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)"
+	match = re.search(pattern, String)
+	if match:
+		return True
+	else:
+		return False
