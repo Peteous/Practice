@@ -11,7 +11,7 @@
  - This is a program that takes you inout of dice to roll, in d20 style formatting, and turns that into a simulated dice roll value. This takes place in the console. Code is written in Python. This is my second ever Python project, and my first public Python commit.
 
 3. Intro to Java Certificate.pdf
- - This file is generated upon the completion of the "Learn Java" app for iOS course on the syntax of Java. It is not my only Java training, but it is technically my most recent. The Java course from this company is not as extensive as the Python course from the same company.
+ - This file is generated upon the completion of the "Learn Java Pro" app for iOS course on the syntax of Java. It is not my only Java training, but it is technically my most recent. The Java course from this company is not as extensive as the Python course from the same company.
 
 4. iOS Slack Code Parser.py
  - This script is meant to run in Pythonista for iOS. I wrote this script because the 2FA codes that Slack generates when you turn on 2FA copy as one long conglomerated string on iOS. This script parses through the string in the clipboard and inserts spaces every 9 characters, where the Slack codes are naturally split. Then is saves the output to the clipboard so it can be pasted into a password manager cleanly.
@@ -35,6 +35,9 @@
 
 10. EmailParser.py
  - This file defines methods for checking input for containing an email formatted string, and extracting an email formatted string from a string. These methods use regular expressions. 
+
+11. Python Tutorial Completion Certificate.pdf
+ - This file is generated upon the completion of the "Learn Python Pro" app for iOS course on the syntax and ideology of Python. It is not my only formal Python training.
 
 ## Feedback Request
  - I am self-taught on Python, and largely self-taught in programming. If you have suggestions for file name changes, class name changes, method name changes, syntax suggestions, or other programming tips, *please* fill out an issue in GutHub in this repo and I will make changes. I want to be better at coding, and your help is always appreciated. 
