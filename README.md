@@ -32,3 +32,6 @@
 
 9. shareQuoteWLink.py
  - This script mimics the functionality of a Workflow workflow that I made. It takes a copied quote and a url input to the share sheet, combines them together in markdown format, and output that text to popular writing apps. 
+
+10. EmailParser.py
+ - This file defines methods for checking input for containing an email formatted string, and extracting an email formatted string from a string. These methods use regular expressions. 
