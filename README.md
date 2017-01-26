@@ -35,3 +35,7 @@
 
 10. EmailParser.py
  - This file defines methods for checking input for containing an email formatted string, and extracting an email formatted string from a string. These methods use regular expressions. 
+
+## Feedback Request
+ - I am self-taught on Python, and largely self-taught in programming. If you have suggestions for file name changes, class name changes, method name changes, syntax suggestions, or other programming tips, *please* fill out an issue in GutHub in this repo and I will make changes. I want to be better at coding, and your help is always appreciated. 
+ - If you find bugs, please leave an issue ticket in this repo and be as specific as possible. I want to debug my code. 
