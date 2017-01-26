@@ -29,3 +29,6 @@
 
 8. urlEncode.java
  - This file is a java class which mimicks the functionality of Encode.py, but in Java. The code was written and compiled in the BlueJay IDE on the Raspberry Pi Zero. 
+
+9. shareQuoteWLink.py
+ - This script mimics the functionality of a Workflow workflow that I made. It takes a copied quote and a url input to the share sheet, combines them together in markdown format, and output that text to popular writing apps. 
