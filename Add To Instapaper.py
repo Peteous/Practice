@@ -16,8 +16,7 @@ def getInstapaperURL(webAddress):
 	paramNames = ['username','password']
 	paramData = ['username@example.com','Example_Password_1']
 	
-	#This part of the method calls my urlEncode method to encode webAddress into instapaper, adding the proper requirements
-	# for the API to function using URL encoding syntax
+	#This part of the method calls urlEncode method from Encode.py to encode webAddress into instapaper with parameters
 	instapaper = urlEncode(webAddress,instapaper,paramNames,paramData)
 	
 	#return the encoded string for later use
