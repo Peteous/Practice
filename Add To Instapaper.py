@@ -16,11 +16,8 @@ def getInstapaperURL(webAddress):
 	paramNames = ['username','password']
 	paramData = ['username@example.com','Example_Password_1']
 	
-	#This part of the method calls urlEncode method from Encode.py to encode webAddress into instapaper with parameters
-	instapaper = urlEncode(webAddress,instapaper,paramNames,paramData)
-	
-	#return the encoded string for later use
-	return instapaper
+	#This part of the method calls urlEncode method from Encode.py to encode webAddress w/ parameters & return
+	return urlEncode(webAddress,instapaper,paramNames,paramData)
 
 #This method executes the URL that adds desired url to Instapaper through url encoded input URL
 def addToInstapaper(URL):
