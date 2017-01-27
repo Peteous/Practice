@@ -14,9 +14,7 @@ def getInstapaperURL(webAddress):
 	
 	#The username and password should be altered by the user. They are set to example values for security reasons
 	paramNames = ['username','password']
-	username = 'username@example.com'
-	password = 'Example_Password_1'
-	paramData = [username,password]
+	paramData = ['username@example.com','Example_Password_1']
 	
 	#This part of the method calls my urlEncode method to encode webAddress into instapaper, adding the proper requirements
 	# for the API to function using URL encoding syntax
