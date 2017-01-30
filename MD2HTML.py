@@ -1,5 +1,5 @@
 import re
-import Encode.py
+from Encode.py import htmlEncode
 
 _text = r"[\S]*"
 _link = r"http[s]?://"
@@ -10,6 +10,7 @@ def urlParse(text):
     if mdLink:
         ahref = str(re.findall(r"("+_link+r")",mdLink))
         ahref.strip(['(',')'])
+        ahref = htmlEncode(ahref)
         ahref = '<a href='+'\"'+ahref+'\">'
         p = re.findall(r"["+_text+r"]",mdLink)
         p.strip(['[',']'])
