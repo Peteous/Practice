@@ -1,4 +1,5 @@
 import re
+import Encode.py
 
 _text = r"[\S]*"
 _link = r"http[s]?://"
