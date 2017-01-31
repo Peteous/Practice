@@ -68,13 +68,14 @@ def urlEncode(url,apiURL=None,paramNames=None,paramData=None):
 	#End logic for parameters
 
 def htmlEncode(text):
-	text.replace('&','&amp')
-	text.replace('\"','&quot')
-	text.replace('\'','&apos')
-	text.replace('<','&lt')
-	text.replace('>','&gt')
-	text.replace('~','&tilde')
-	return(text)
+	text = str(text)
+	text.replace('&','&amp;')
+	text.replace('\"','&quot;')
+	text.replace('\'','&apos;')
+	text.replace('<','&lt;')
+	text.replace('>','&gt;')
+	text.replace('~','&tilde;')
+	return text
 
 #internal method containing character rules for url encoding
 def _urlCharShift(text):
