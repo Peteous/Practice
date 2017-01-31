@@ -1,22 +1,35 @@
-import re
-from Encode.py import htmlEncode
-
-_text = r"[\S]*"
-_link = r"http[s]?://"
-_linkBrackets = r"["+_text+r"]("+_link+r")"
-
 def urlParse(text):
-    mdLink = re.findall(_linkBrackets)
-    if mdLink:
-        ahref = str(re.findall(r"("+_link+r")",mdLink))
-        ahref.strip(['(',')'])
-        ahref = htmlEncode(ahref)
-        ahref = '<a href='+'\"'+ahref+'\">'
-        p = re.findall(r"["+_text+r"]",mdLink)
-        p.strip(['[',']'])
-        p = p+r"</a>"
-        p = ahref + p
-        return '<p>' + p + '</p>'
-    else:
-        print('No Markdown Links Found')
-        return ''
+	_link = ''
+	_title = ''
+	text = list(text)
+	for char in text:
+		if char == '[':
+			start = text.index(char)
+		if char == ']':
+			mid1 = text.index(char)
+		if char == '(':
+			mid2 = text.index(char)
+		if char == ')':
+			end = text.index(char)
+	for index in range(len(text)):
+		if index > start and index < mid1:
+			_title += text[index]
+		if index > mid2 and index < end:
+			if text[index]=='&':
+				_link += '&amp;'
+			else:
+				_link += text[index]
+	if not _link == '':
+		return '<p>'+'<a href='+'\"'+_link+'\">'+_title+'</a></p>'
+	else:
+		print('No Markdown Links Found')
+		return ''
+
+def main():
+	import clipboard
+	string = clipboard.get()
+	string = urlParse(string)
+	print(string)
+
+if __name__ == "__main__":
+	main()
