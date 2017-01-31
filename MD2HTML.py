@@ -25,6 +25,7 @@ def urlParse(text):
 		print('No Markdown Links Found')
 		return ''
 
+#Does not handle literal asterisks \*
 def italicsParse(text):
 	text = list(text)
 	output = ''
@@ -56,6 +57,7 @@ def italicsParse(text):
 			print('No italics found')
 			return ''
 
+#does not handle literal underscores \_
 def underParse(text):
 	text = list(text)
 	output = ''
