@@ -3,10 +3,11 @@ from Encode import htmlEncode
 
 _text = r"[\S]*"
 _link = r"http[s]?://"
-_linkBrackets = r"["+_text+r"]("+_link+r")"
+_linkBrackets = "\[.+?\]\(^https?:\/\/.+?\)"
 
 def urlParse(text):
 	mdLink = re.findall(_linkBrackets,text)
+	print(mdLink)
 	if not mdLink == None:
 		ahref = str(re.findall(r"("+_link+r")",str(mdLink)))
 		ahref = ahref.strip('()')
