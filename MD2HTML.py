@@ -43,14 +43,21 @@ def italicsParse(text):
 				__first == 2
 			else:
 				__first = 2
-	for index in range(len(text)):
-		if index > __start and index < __end:
-			output += text[index]
-	if not output == '':
-		return '<em>'+output+'</em>'
-	else:
+	if __start == None or __end == None:
 		print('No italics found')
 		return ''
+	else:
+		for index in range(len(text)):
+			if index > __start and index < __end:
+				output += text[index]
+		if not output == '':
+			return '<em>'+output+'</em>'
+		else:
+			print('No italics found')
+			return ''
+
+def underParse(text):
+	text = list(text)
 
 def main():
 	import clipboard
