@@ -120,9 +120,12 @@ def boldParse(text):
 			print('No double asterisks found')
 			return ''
 
+#Only runs through string once
 def main():
 	import clipboard
 	string = clipboard.get()
+	if string == None:
+		string = input("Type or paste your Markdown formatted text here:\n")
 	string = urlParse(string)
 	print(string)
 
