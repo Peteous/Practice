@@ -1,3 +1,4 @@
+#Not sure if I can use _parse() method for this method
 def urlParse(text):
 	_link = ''
 	_title = ''
@@ -110,16 +111,21 @@ def _parse(text,char,num,tag,endchar = None):
 
 #Only runs through string once
 def main():
+	__condition = True
 	import clipboard
 	string = clipboard.get()
 	if string == None:
 		string = input("Type or paste your Markdown formatted text here:\n")
-	string = urlParse(string)
-	string = italicsParse(string)
-	string = boldParse(string)
-	string = H1Parse(string)
-	string = H2Parse(string)
+	while __condition == True:
+		string = urlParse(string)
+		string = italicsParse(string)
+		string = boldParse(string)
+		string = H1Parse(string)
+		string = H2Parse(string)
+		if urlParse(string) == '' and italicsParse(string) == '' and boldParse(string) == '' and H1Parse(string) == '' and H2Parse(string) == '':
+			__condition = False
 	print(string)
+	clipboard.set(string)
 
 if __name__ == "__main__":
 	main()
