@@ -140,7 +140,7 @@ def _parse(text,char,num,tag):
 					__first == 2
 				else:
 					__first = 2
-		if num = 2:
+		if num == 2:
 			if letter == char and __first == 0:
 				if text[text.index(letter)+1] == char:
 					__start = text.index(letter)
