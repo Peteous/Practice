@@ -31,66 +31,13 @@ def italicsParse(text):
 
 #does not handle literal underscores \_
 def underParse(text):
-	text = list(text)
-	output = ''
-	__first = 0
-	for char in text:
-		if char == '_' and __first == 0:
-			if not text[text.index(char)+1] == '_':
-				__start = text.index(char)
-				__first == 1
-			#Escape case for finding bold-marked text
-			else:
-				__first = 2
-		if char == '_' and __first == 1:
-			if not text[text.index(char)+1] == '_':
-				__end = text.index(char)
-				__first == 2
-			else:
-				__first = 2
-	if __start == None or __end == None:
-		print('No underscores found')
-		return ''
-	else:
-		for index in range(len(text)):
-			if index > __start and index < __end:
-				output += text[index]
-		if not output == '':
-			return '<em>'+output+'</em>'
-		else:
-			print('No underscores found')
-			return ''
+	return _parse(text,'_',1,'<em>')
 
 def boldParse(text):
-	text = list(text)
-	output = ''
-	__first = 0
-	for char in text:
-		if char == '_' and __first == 0:
-			if text[text.index(char)+1] == '_':
-				__start = text.index(char)
-				__first == 1
-			#Escape case for finding italic-marked text
-			else:
-				__first = 2
-		if char == '_' and __first == 1:
-			if text[text.index(char)+1] == '_':
-				__end = text.index(char)
-				__first == 2
-			else:
-				__first = 2
-	if __start == None or __end == None:
-		print('No double asterisks found')
-		return ''
-	else:
-		for index in range(len(text)):
-			if index > __start+1 and index < __end:
-				output += text[index]
-		if not output == '':
-			return '<strong>'+output+'</strong>'
-		else:
-			print('No double asterisks found')
-			return ''
+	return _parse(text,'*',2,'<strong>')
+
+def uuParse(text):
+	return _parse(text,'_',2,'<strong>')
 
 def _parse(text,char,num,tag):
 	text = list(text)
@@ -132,7 +79,7 @@ def _parse(text,char,num,tag):
 		else:
 			print('Input number not recognized')
 			return ''
-		
+
 	if __start == None or __end == None:
 		print('No \"' + char + '\" tags were found')
 		return ''
