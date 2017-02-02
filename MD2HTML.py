@@ -112,10 +112,13 @@ def _parse(text,char,num,tag,endchar = None):
 #Only runs through string once
 def main():
 	__condition = True
-	import clipboard
-	string = clipboard.get()
-	if string == None:
-		string = input("Type or paste your Markdown formatted text here:\n")
+	try:
+		import clipboard
+		string = clipboard.get()
+		if string == None:
+			string = input("Type or paste your Markdown formatted text here:\n")
+	except:
+		string = input("Type or paste your Markdown formatted text here:\n") 
 	while __condition == True:
 		string = urlParse(string)
 		string = italicsParse(string)
