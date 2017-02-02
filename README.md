@@ -21,24 +21,27 @@
 
 6. Add To Instapaper.py
  - This script was written in Pythonista for iOS. It is, as such, hampered and enabled by the libraries in Pythonista. It is designed to run within the share sheet, but can also be used from the app as long as you have a URL copied. It uses Instapaper's simple API to upload a url of your choice to Instapaper as a bookmark.
- - This script was written mostly for fun to see I could copy the functionality of a Workflow workflow that I had made. I am relatively happy with the results. 
+ - This script was written mostly for fun to see I could copy the functionality of a Workflow workflow that I had made. I am relatively happy with the results.
  - You will need to enter your own details for username and password, which I did not provide for security reasons.
 
 7. Encode.py
  - This file contains a method for encoding inputs into a url format. The method can take in just a string for encoding, a string and a string for an url for an API, and parameters for url encoding. This method could be used in a script like Add To Instapaper.py instead of writing all the steps out. Eventually, I will add other encoding methods to this file, for encoding systems like base64 encoding for example. This document also contains an internal method, which is not meant for use outside of this document. This method is urlCharShift, which contains the actual character changes in url encoding.
 
 8. urlEncode.java
- - This file is a java class which mimicks the functionality of Encode.py, but in Java. The code was written and compiled in the BlueJay IDE on the Raspberry Pi Zero. 
+ - This file is a java class which mimicks the functionality of Encode.py, but in Java. The code was written and compiled in the BlueJay IDE on the Raspberry Pi Zero.
 
 9. shareQuoteWLink.py
- - This script mimics the functionality of a Workflow workflow that I made. It takes a copied quote and a url input to the share sheet, combines them together in markdown format, and output that text to popular writing apps. 
+ - This script mimics the functionality of a Workflow workflow that I made. It takes a copied quote and a url input to the share sheet, combines them together in markdown format, and output that text to popular writing apps.
 
 10. EmailParser.py
- - This file defines methods for checking input for containing an email formatted string, and extracting an email formatted string from a string. These methods use regular expressions. 
+ - This file defines methods for checking input for containing an email formatted string, and extracting an email formatted string from a string. These methods use regular expressions.
 
 11. Python Tutorial Completion Certificate.pdf
  - This file is generated upon the completion of the "Learn Python Pro" app for iOS course on the syntax and ideology of Python. It is not my only formal Python training.
 
+ 12. MD2HTML.py
+ - I fully recognize that I am reinventing the wheel with this script. However, this script will take in text written/formatted in Markdown and transform it into HTML text. It works via the clipboard function from Pythonista for iOS, but it can also take in text entered via the Python terminal if there is nothing in the clipboard. If not running in Pythonista, you will need to remove all of the clipboard functionality in order to avoid compile errors.
+
 ## Feedback Request
- - I am self-taught on Python, and largely self-taught in programming. If you have suggestions for file name changes, class name changes, method name changes, syntax suggestions, or other programming tips, *please* fill out an issue in GutHub in this repo and I will make changes. I want to be better at coding, and your help is always appreciated. 
- - If you find bugs, please leave an issue ticket in this repo and be as specific as possible. I want to debug my code. 
+ - I am self-taught on Python, and largely self-taught in programming. If you have suggestions for file name changes, class name changes, method name changes, syntax suggestions, or other programming tips, *please* fill out an issue in GutHub in this repo and I will make changes. I want to be better at coding, and your help is always appreciated.
+ - If you find bugs, please leave an issue ticket in this repo and be as specific as possible. I want to debug my code.
