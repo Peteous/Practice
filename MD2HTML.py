@@ -115,6 +115,10 @@ def main():
 	if string == None:
 		string = input("Type or paste your Markdown formatted text here:\n")
 	string = urlParse(string)
+	string = italicsParse(string)
+	string = boldParse(string)
+	string = H1Parse(string)
+	string = H2Parse(string)
 	print(string)
 
 if __name__ == "__main__":
