@@ -109,7 +109,7 @@ def _parse(text,char,num,tag,endchar = None):
 			print('No output could be generated')
 			return ''
 
-#Only runs through string once
+#Not working
 def main():
 	__condition = True
 	try:
@@ -117,7 +117,7 @@ def main():
 		string = clipboard.get()
 		if string == None:
 			string = input("Type or paste your Markdown formatted text here:\n")
-	except:
+	except ImportError:
 		string = input("Type or paste your Markdown formatted text here:\n") 
 	while __condition == True:
 		string = urlParse(string)
