@@ -39,11 +39,22 @@ def boldParse(text):
 def uuParse(text):
 	return _parse(text,'_',2,'<strong>')
 
-def _parse(text,char,num,tag):
+def H1Parse(text):
+	return _parse(text,'#',1,'<h1>','\n')
+
+def H2Parse(text):
+	return _parse(text,'#',2,'<h2>','\n')
+
+#Cannot handle H3 or H4, etc header tags
+def _parse(text,char,num,tag,endchar = None):
 	text = list(text)
-	char = char(char)
+	char = str(char)
 	num = int(num)
 	tag = str(tag)
+	if endchar == None:
+		endchar = str(char)
+	else:
+		endchar = str(endchar)
 	output = ''
 	__endtag = '</'+tag.strip('<>')+'>'
 	__first = 0
@@ -56,9 +67,9 @@ def _parse(text,char,num,tag):
 				#Escape case for finding repeat char
 				else:
 					__first = 2
-			if letter == char and __first == 1:
-				if not text[text.index(letter)+1] == char:
-					__end = text.index(char)
+			if letter == endchar and __first == 1:
+				if not text[text.index(letter)+1] == endchar:
+					__end = text.index(letter)
 					__first == 2
 				else:
 					__first = 2
@@ -70,9 +81,9 @@ def _parse(text,char,num,tag):
 				#Escape case for not finding repeat char
 				else:
 					__first = 2
-			if letter == char and __first == 1:
-				if text[text.index(letter)+1] == char:
-					__end = text.index(char)
+			if letter == endchar and __first == 1:
+				if text[text.index(letter)+1] == endchar:
+					__end = text.index(letter)
 					__first == 2
 				else:
 					__first = 2
