@@ -89,11 +89,11 @@ while(cont == True):
 	again = input('\nWould you like to roll again?\n(Respond Yes or No)')
 
 	# Determine if the user wants to continue or not, and loop or break accordingly
-	if (again == 'Yes' or again == 'yes' or again == 'y' or again == 'Y'):
+	if (again.lowercase() == 'yes' or again.lowercase() == 'y'):
 		print('\n')
 		cont = True
 		continue
-	elif (again == 'No' or again == 'no' or again == 'n' or again == 'N'):
+	elif (again.lowercase() == 'no' or again.lowercase() == 'n'):
 		print('\nThank you for playing\n\nProgram terminated')
 		cont = False
 		continue
