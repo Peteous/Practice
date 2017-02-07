@@ -60,6 +60,19 @@ def urlEncode(url,apiURL=None,paramNames=None,paramData=None):
 	elif apiURL == None and paramNames == None and paramData == None:
 		output += url
 		return output
+	
+	# if there is not a url, but there is all of the other things
+	elif url == None and not (apiURL == None and paramNames == None and paramData == None):
+		output += apiURL
+		output += '?'
+		length = len(paramNames)
+		for index in range(length):
+			paramData[index] = paramData[index].replace(' ','+')
+			if index < 1:
+				output += paramNames[index] + '=' + paramData[index]
+			else:
+				output += '&' + paramNames[index] + '=' + paramData[index]
+		return output
 
 	#	Handle edge cases
 	else:
