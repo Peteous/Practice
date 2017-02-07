@@ -6,7 +6,24 @@ except ImportError as e:
 	print('This is a Pythonista library')
 	importSuccess = False
 import webbrowser
-from Encode import urlEncode
+
+try:
+	from Encode import urlEncode
+except ImportError:
+	def urlEncode(url,apiURL=None,paramNames=None,paramData=None):
+		output = ''
+		if url == None and not (apiURL == None and paramNames == None and paramData == None):
+			output += apiURL
+			output += '?'
+			length = len(paramNames)
+			for index in range(length):
+				if index < 1:
+					output += paramNames[index] + '=' + paramData[index]
+				else:
+					output += '&' + paramNames[index] + '=' + paramData[index]
+			return output
+		else:
+			print("Can't locate urlEncode() method")		
 
 def main():
 	if importSuccess == True:
