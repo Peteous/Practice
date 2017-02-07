@@ -36,9 +36,7 @@ def main():
 	apiURL = 'https://duckduckgo.com/'
 	paramNames = ['q','t','ia']
 	paramData = [query.replace(' ','+'),'ipad','lyrics']
-	print(paramData)
 	query = urlEncode(None,apiURL,paramNames,paramData)
-	print(query)
 	webbrowser.open(query)
 
 if __name__ == '__main__':
