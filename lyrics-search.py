@@ -1,12 +1,21 @@
-import appex
+try:
+	import appex
+	importSuccess = True
+except ImportError as e:
+	print(e.with_traceback)
+	print('This is a Pythonista library')
+	importSuccess = False
 import webbrowser
 from Encode import urlEncode
 
 def main():
-	if not appex.is_running_extension():
-		query = str(input('What song name or lyrics excerpt are you looking for?\n'))
+	if importSuccess == True:
+		if not appex.is_running_extension():
+			query = str(input('What song name or lyrics excerpt are you looking for?\n'))
+		else:
+			query = str(appex.get_text())
 	else:
-		query = str(appex.get_text())
+		query = str(input('What song name or lyrics excerpt are you looking for?\n'))
 	apiURL = 'https://duckduckgo.com/'
 	paramNames = ['q','t','ia']
 	paramData = [query.replace(' ','+'),'ipad','lyrics']
