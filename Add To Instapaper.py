@@ -4,9 +4,29 @@ import appex
 import requests
 import clipboard
 
-#import urlEncode method from my Encode file
-from Encode import urlEncode
-
+#import urlEncode method from my Encode file and make urlEncode method if import fails
+try:
+	from Encode import urlEncode
+except ImportError:
+	print('Encode.py was not found. Establishing internal urlEncode method')
+	def urlEncode(url,apiURL=None,paramNames=None,paramData=None):
+		output = ''
+		url = _urlCharShift(url)
+		url = 'url='+url
+		if not paramNames == None and not paramData == None and not apiURL == None:
+			output += apiURL
+			output += '?'
+			length = len(paramNames)
+			for index in range(length):
+				paramData[index] = _urlCharShift(paramData[index])
+				if index < 1:
+					output += paramNames[index] + '=' + paramData[index]
+				else:
+					output += '&' + paramNames[index] + '=' + paramData[index]
+			output += '&'
+			output += url
+			return output
+		
 #This method creates a URL that when excecuted will add the input url, "webAddress", to Instapaper as a bookmark
 def getInstapaperURL(webAddress):
 	webAddress = str(webAddress)
