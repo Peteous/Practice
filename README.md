@@ -39,9 +39,6 @@
 11. Python Tutorial Completion Certificate.pdf
  - This file is generated upon the completion of the "Learn Python Pro" app for iOS course on the syntax and ideology of Python. It is not my only formal Python training.
 
- 12. MD2HTML.py
- - I fully recognize that I am reinventing the wheel with this script. However, this script will take in text written/formatted in Markdown and transform it into HTML text. It works via the clipboard function from Pythonista for iOS, but it can also take in text entered via the Python terminal if there is nothing in the clipboard. If not running in Pythonista, you will need to remove all of the clipboard functionality in order to avoid compile errors.
-
 ## Feedback Request
  - I am self-taught on Python, and largely self-taught in programming. If you have suggestions for file name changes, class name changes, method name changes, syntax suggestions, or other programming tips, *please* fill out an issue in GutHub in this repo and I will make changes. I want to be better at coding, and your help is always appreciated.
  - If you find bugs, please leave an issue ticket in this repo and be as specific as possible. I want to debug my code.
